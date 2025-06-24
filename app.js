@@ -15,10 +15,17 @@ app.use(cookieParser());
 
 // Routes
 app.use('/auth', require('./routes/auth'));
-app.use('/clone', require('./routes/clone'));
+//app.use('/clone', require('./routes/clone'));
 
 app.get('/', (req, res) => {
     res.send('🚀 CyberClone API is running');
 });
 
 module.exports = app;
+const PORT = process.env.PORT || 5050;
+app.listen(PORT, () => {
+    console.log(`✅ Server running on http://localhost:${PORT}`);
+});
+
+
+
